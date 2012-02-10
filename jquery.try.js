@@ -10,13 +10,20 @@
         return this;
       }
     };
-    return jQuery.fn.tryCatch = function() {
+    jQuery.fn.tryCatch = function() {
       var args, method, obj_exception, _i;
       method = arguments[0], args = 3 <= arguments.length ? __slice.call(arguments, 1, _i = arguments.length - 1) : (_i = 1, []), obj_exception = arguments[_i++];
       try {
         return this[method].apply(this, args);
       } catch (e) {
         return obj_exception;
+      }
+    };
+    return jQuery.fn.tryTap = function(fn) {
+      try {
+        return fn.apply(this);
+      } catch (e) {
+        return this;
       }
     };
   })();

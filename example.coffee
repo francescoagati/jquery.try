@@ -8,3 +8,9 @@ $(document).ready ->
   $("#pippa").html("sss")
   .tryCatch("html2","hello",$("#pippa2"))
   .html("hello pippa 2")
+
+  $("#pippa").html("sss")
+  .tryTap ->
+    console.log $(@).html()
+    console.log $(@).html2()
+  .html("See you taptry")

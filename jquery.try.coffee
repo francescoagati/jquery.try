@@ -11,3 +11,9 @@ do () ->
     catch e
       obj_exception
     
+    
+  jQuery.fn.tryTap= (fn) ->
+    try
+      fn.apply(@)        
+    catch e
+      @
